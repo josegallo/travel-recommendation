@@ -8,7 +8,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* #1 Navigation bar styling */
+/* ##1 Navigation bar styling */
 .navbar {
     display: flex;
     align-items: center;
@@ -57,6 +57,17 @@ body {
     overflow: hidden;
     flex-direction: column;
 }
+
+.search-bar-about-us  {
+    display: flex;
+    align-items: center;
+    background-color: #2b2b2b; /* Light gray background color for the search bar */
+    padding: 5px;
+    border-radius: 20px;
+    overflow: hidden;
+    flex-direction: column;
+}
+
 
 div#search-results { /* hide while not results to show */
      /*display: none;*/
@@ -114,7 +125,7 @@ div#search-results { /* hide while not results to show */
     }
 }
 
-/* #2 Home */
+/* ##2 Home */
 
         .container {
             position: relative;
@@ -133,13 +144,21 @@ div#search-results { /* hide while not results to show */
             height: 100%;
             background: rgba(0, 0, 0, 0.5);
         }
+
         .content {
             position: relative;
             padding: 90px;
             padding-left: 7%;
             max-width: 550px;
         }
-        
+
+       .content-about-us {
+            position: relative;
+            padding: 90px;
+            padding-left: 7%;
+            max-width: 1400px;
+       }
+
         h1 {
             text-transform: uppercase;
             margin-top: 100px;
@@ -154,6 +173,15 @@ div#search-results { /* hide while not results to show */
             line-height: 1.2;
             width: 650px;
         }
+
+        .content-about-us .description {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            font-size: 1.2em;
+            line-height: 1.2;
+            width: 100%;
+        }
+
         .social-links {
             position: absolute;
             left: 20px;
@@ -198,11 +226,13 @@ div#search-results { /* hide while not results to show */
 
         /* margin for mobile devices */
             @media (max-width: 768px) {
-                    .content {
+                    .content, 
+                    .content-about-us {
                         padding-left: 15%;
-
                     }
-                    .content h1 {
+
+                    .content h1,
+                    .content-about-us h1 {
                         font-size: 3em;
                     }
                     .description {
@@ -210,3 +240,72 @@ div#search-results { /* hide while not results to show */
                     }
             }
         
+/* ##3 About us page */
+
+.team-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-image: url('https://example.com/nyc-background.jpg'); /* Replace with the actual image path */
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+}
+.team-header {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: left;
+    width: 20%;
+}
+.team-members {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    width: 80%;
+    max-width: 1200px;
+}
+.team-member {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.team-member img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.team-member h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+.team-member p {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+.role {
+    background-color: #3a3a8f;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+/* Responsive layout for mobile */
+@media (max-width: 768px) {
+    .team-members {
+        flex-direction: column;
+        align-items: center;
+    }
+    .team-header {
+        text-align: center;
+    }
+}
