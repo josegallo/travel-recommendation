@@ -67,12 +67,16 @@ div#search-results { /* hide while not results to show */
      /*display: none;*/
      margin-top: 100px;
      position: fixed;
-     background-color: pink;
+     background-color: #00bfff;
      border: 1px;
      border-color: black;
      color: white;
      min-width: 300px;
      text-align: center;
+}
+
+div#search-results img {
+    width: 450px;
 }
 
 .search-bar input[type="text"] {
