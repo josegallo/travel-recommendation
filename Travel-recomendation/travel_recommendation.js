@@ -1,6 +1,20 @@
 // Function for the Search button
 function search() {
-    alert("Searching..."); // Placeholder for actual search function
+    // alert("Searching..."); // Placeholder for actual search function
+    fetch('./travel_recommendation_api.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log(data);
+    })
+    .catch(error => {
+      console.error('Error fetching the data:', error);
+    });
+
 }
 
 // Function for the Clear button
