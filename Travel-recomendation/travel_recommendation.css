@@ -1,0 +1,117 @@
+/* Basic reset and styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Navigation bar styling */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2b2b2b;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px; /* Larger font size for navigation links */
+    font-weight: bold;
+}
+
+/* Hover effect for navigation links */
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.navbar .logo img {
+    height: 24px;
+    margin-right: 8px;
+}
+
+/* Search bar styling */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #f2f2f2; /* Light gray background color for the search bar */
+    padding: 5px;
+    border-radius: 20px;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+div#search-results { /* hide while not results to show */
+     /*display: none;*/
+     margin-top: 100px;
+     position: fixed;
+     background-color: pink;
+     border: 1px;
+     border-color: black;
+     color: white;
+     min-width: 300px;
+     text-align: center;
+}
+
+.search-bar input[type="text"] {
+    border: none;
+    outline: none;
+    padding: 5px;
+    width: 250px;
+    background-color: #f2f2f2; /* Match the background of the input field with the search bar */
+    font-size: 16px;
+    color: #000000; /* Text color matching the image */
+}
+
+
+/* Placeholder styling */
+.search-bar input[type="text"]::placeholder {
+    color: #000000; /* Placeholder text color */
+    font-style: italic; /* Optional: to make it visually distinctive */
+}
+
+/* Styling for Search and Clear buttons */
+.search-bar button {
+    border: none;
+    background-color: #000000; /* Teal color matching the buttons in the image */
+    color: #fff;
+    padding: 5px 15px;
+    cursor: pointer;
+    border-radius: 15px;
+    font-weight: bold;
+    margin-left: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #004f51; /* Darker shade of teal for hover effect */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+    .search-bar input[type="text"] {
+        width: 100%;
+    }
+}
+
+

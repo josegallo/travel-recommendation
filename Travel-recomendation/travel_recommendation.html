@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Bloom</title>
+    <link rel="stylesheet" href="travel_recommendation.css">
+    <script src="travel_recommendation.js"></script>
+</head>
+<body>
+
+    <!-- Navigation bar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="./rsc/Fly_logo.png" alt=" Logo"> <!-- Use your logo here -->
+            Travel Ba-Da-Boom
+        </div>
+        <div>
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact Us</a>
+        </div>
+
+        <div class="search-bar">
+            <div id="search-inputs">
+                <input type="text" placeholder="Enter a destination or keyword">
+                <button onclick="search()">Search</button>
+                <button onclick="reset()">Clear</button>
+            </div>
+            <div id="search-results">
+                <h2>Results...</h2>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
