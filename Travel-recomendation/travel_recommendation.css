@@ -303,3 +303,119 @@ div#search-results { /* hide while not results to show */
         text-align: center;
     }
 }
+
+/* ##4 Contact page */
+
+/* Form container */
+
+.contact-form input::placeholder,  .contact-form textarea#message::placeholder {
+    color: wheat;
+}
+.containter-contact-form  {
+    display: flex;
+    flex-direction: row;
+    align-items: normal;
+    background-image: url('https://example.com/nyc-background.jpg'); /* Replace with the actual image path */
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+    padding-top: 200px;
+    width;: 1400px;
+}
+
+.contact-intro {
+    width: 40%;
+    padding-left: 50px;
+}
+
+.contact-intro h1 {
+ padding-bottom: 50px;
+}
+.contact-form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 8px;
+    width: 55%;
+    backdrop-filter: blur(10px);
+}
+
+
+
+.contact-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.contact-form label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: teal;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: darkcyan;
+}
+
+
+@media (max-width: 768px) {
+
+    .containter-contact-form  {
+        flex-direction: column;
+
+    }
+    .contact-intro {
+        width: 100%;
+        text-align: left;
+        color:  rgb(2, 70, 70);
+        padding-left: 0px;
+    }
+
+    .contact-intro h1 {
+        font-size: 36px;
+        padding-bottom: 0px;
+        margin-top: -100px;
+        color:  rgb(2, 70, 70);
+       }
+
+    .contact-intro p {
+        font-size: 26px;
+
+    }
+
+    .contact-form {
+        background: rgba(255, 255, 255, 0);
+        padding: 0px;
+        border-radius: 8px;
+        width: 100%;
+        backdrop-filter: blur(10px);
+    }
+
+    .contact-form input::placeholder,  .contact-form textarea#message::placeholder {
+        color: white;
+    }
+    .contact-form label, .contact-form input,  .contact-form textarea#message {
+        font-size: 20px;
+    }
+}
