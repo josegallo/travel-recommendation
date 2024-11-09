@@ -136,21 +136,23 @@ div#search-results { /* hide while not results to show */
         .content {
             position: relative;
             padding: 90px;
-            padding-left: 8%;
-            max-width: 690px;
+            padding-left: 7%;
+            max-width: 550px;
         }
+        
         h1 {
             text-transform: uppercase;
             margin-top: 100px;
             font-size: 5em;
-            line-height: 1.2;
+            line-height: 1.1;
         }
+
         .description {
             margin-top: 50px;
             margin-bottom: 50px;
-            font-size: 1.5em;
+            font-size: 1.2em;
             line-height: 1.2;
-            max-width: 450px;
+            width: 650px;
         }
         .social-links {
             position: absolute;
@@ -193,3 +195,18 @@ div#search-results { /* hide while not results to show */
             height: 200px; /* Adjust the height as needed */
             background-color: white;
         }
+
+        /* margin for mobile devices */
+            @media (max-width: 768px) {
+                    .content {
+                        padding-left: 15%;
+
+                    }
+                    .content h1 {
+                        font-size: 3em;
+                    }
+                    .description {
+                        max-width: 430px;
+                    }
+            }
+        
