@@ -59,7 +59,7 @@ function search() {
           const showMoreButton = document.createElement('button');
           showMoreButton.textContent = 'Show more results';
           showMoreButton.id = 'show-more-results'; // Add ID
-          showMoreButton.style.marginBottom = '220px'; // Add margin-bottom
+          showMoreButton.style.marginBottom = '250px'; // Add margin-bottom
           showMoreButton.style.backgroundColor = 'red'; // Add background color
           showMoreButton.onclick = () => {
               // Clear previous results and show all items
