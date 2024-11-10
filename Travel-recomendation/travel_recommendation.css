@@ -64,8 +64,8 @@ body {
 
 
 div#search-results { /* hide while not results to show */
-     /*display: none;*/
-     margin-top: 44px;
+     display: none;
+     margin-top: 43px;
      position: fixed;
      background-color: #00bfff;
      border: 1px;
@@ -76,15 +76,24 @@ div#search-results { /* hide while not results to show */
      max-height: 100vh;        /* Adjust this height as needed */
      overflow-y: scroll;      /* Enables vertical scrolling */
      padding-right: 10px;     /* Optional: Adds padding to avoid scrollbar overlap */
+     padding-bottom: 20px;      /* Adds bottom padding to show the last item fully */
+}
+.result-item:last-child {
+    margin-bottom: 90px;      /* Extra margin at the bottom of the last item */
 }
 
 @media (max-width: 768px) {
     #search-results {
         width: 100vw;        /* Sets width to full viewport width on smaller screens */
         max-width: 100vw;    /* Ensures it doesn't exceed viewport width */
-        margin-top: 40px;
+        margin-top: 70px!important;
+        padding-bottom: 20px; /* Ensures bottom padding on mobile as well */
+    }
+    .result-item:last-child {
+        margin-bottom: 350px;      /* Extra margin at the bottom of the last item */
     }
 }
+
 
 div#search-results img {
     width: 460px;

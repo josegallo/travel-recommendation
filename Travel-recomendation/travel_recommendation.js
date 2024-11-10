@@ -20,7 +20,7 @@ function search_old() {
 function search() {
     // Get the search input value
         // Get the value from the input field
-        const query = document.getElementById('search-inputs-input').value;
+        const query = document.getElementById('search-inputs-input').value.toLowerCase();
     
         // Log the query to the console to verify it's working
         console.log("Search query:", query);
@@ -49,10 +49,11 @@ function search() {
           results = data.beaches;
         } else if (query.includes('temple')) {
           results = data.temples;
-        } else if (query.includes('countr')) {
+        } else if (query.includes('country')) {
           results = data.countries.flatMap(country => country.cities);
         } else {
           resultsContainer.innerHTML = '<p>No matching results found. Try "beach," "temple," or "country".</p>';
+          document.getElementById('search-results').style.display = 'block';
           return;
         }
 
@@ -87,6 +88,10 @@ function search() {
 
           // Append item container to results container
           resultsContainer.appendChild(itemContainer);
+
+          // Make div#search-results visible
+          //document.getElementById('search-results').style.visibility = 'visible';
+          document.getElementById('search-results').style.display = 'block';
         });
       })
       .catch(error => {
@@ -96,6 +101,8 @@ function search() {
 // Function for the Clear button
 function reset() {
     document.querySelector('.search-bar input').value = '';
+    document.getElementById('search-results').innerHTML = '';
+    document.getElementById('search-results').style.display = 'none';
 }
 
 // Function for alert when submiting Contact Form 
