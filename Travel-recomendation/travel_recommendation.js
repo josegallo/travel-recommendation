@@ -47,57 +47,57 @@ function search() {
         // Check the query for specific keywords and set results accordingly
         if (query.includes('beach')) {
           results = data.beaches;
+          displayResults(results,resultsContainer);
         } else if (query.includes('temple')) {
           results = data.temples;
+          displayResults(results,resultsContainer);
         } else if (query.includes('country')) {
           results = data.countries.flatMap(country => country.cities);
+          displayResults(results,resultsContainer);
         } else {
           resultsContainer.innerHTML = '<p>No matching results found. Try "beach," "temple," or "country".</p>';
           document.getElementById('search-results').style.display = 'block';
           return;
         }
 
-        // Generate HTML for each result and insert into results container
-        results.forEach(item => {
-          const itemContainer = document.createElement('div');
-          itemContainer.classList.add('result-item');
 
-          // Image element
-          const img = document.createElement('img');
-          img.src = item.imageUrl;
-          img.alt = item.name;
-
-          // Name (h2) element
-          const name = document.createElement('h2');
-          name.textContent = item.name;
-
-          // Description (p) element
-          const description = document.createElement('p');
-          description.textContent = item.description;
-
-          // Visit button
-          const button = document.createElement('button');
-          button.textContent = 'Visit';
-          button.onclick = () => window.location.href = '#';
-
-          // Append elements to item container
-          itemContainer.appendChild(img);
-          itemContainer.appendChild(name);
-          itemContainer.appendChild(description);
-          itemContainer.appendChild(button);
-
-          // Append item container to results container
-          resultsContainer.appendChild(itemContainer);
-
-          // Make div#search-results visible
-          //document.getElementById('search-results').style.visibility = 'visible';
-          document.getElementById('search-results').style.display = 'block';
-        });
       })
       .catch(error => {
         console.error('Error fetching the data:', error);
       });
   }
+
+//display elments of research. Generate HTML for each result and insert into results container
+  function displayResults(results, container) {
+    results.forEach(item => {
+        const itemContainer = document.createElement('div');
+        itemContainer.classList.add('result-item');
+
+        const img = document.createElement('img');
+        img.src = item.imageUrl;
+        img.alt = item.name;
+
+        const name = document.createElement('h2');
+        name.textContent = item.name;
+
+        const description = document.createElement('p');
+        description.textContent = item.description;
+
+        const button = document.createElement('button');
+        button.textContent = 'Visit';
+        button.onclick = () => window.location.href = '#';
+
+        itemContainer.appendChild(img);
+        itemContainer.appendChild(name);
+        itemContainer.appendChild(description);
+        itemContainer.appendChild(button);
+
+        container.appendChild(itemContainer);
+    });
+
+    container.style.display = 'block';
+}
+
 // Function for the Clear button
 function reset() {
     document.querySelector('.search-bar input').value = '';
