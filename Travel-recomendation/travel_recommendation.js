@@ -53,7 +53,23 @@ function search() {
           displayResults(results,resultsContainer);
         } else if (query.includes('country')) {
           results = data.countries.flatMap(country => country.cities);
-          displayResults(results,resultsContainer);
+          displayResults(results.slice(0, 2), resultsContainer);
+
+          // Create the "Show more results" button
+          const showMoreButton = document.createElement('button');
+          showMoreButton.textContent = 'Show more results';
+          showMoreButton.id = 'show-more-results'; // Add ID
+          showMoreButton.style.marginBottom = '220px'; // Add margin-bottom
+          showMoreButton.style.backgroundColor = 'red'; // Add background color
+          showMoreButton.onclick = () => {
+              // Clear previous results and show all items
+              resultsContainer.innerHTML = '';
+              displayResults(results, resultsContainer);
+              // Remove the "Show more results" button after displaying all results
+              showMoreButton.remove();
+          };
+
+          resultsContainer.appendChild(showMoreButton);
         } else {
           resultsContainer.innerHTML = '<p>No matching results found. Try "beach," "temple," or "country".</p>';
           document.getElementById('search-results').style.display = 'block';
